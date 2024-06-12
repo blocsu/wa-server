@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add faker.person
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add argon2@0.30.3
 
 PATH: 
   C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\STMicroelectronics\STM32 ST-LINK Utility\ST-LINK Utility;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\PuTTY\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Users\Admin\AppData\Local\Programs\Python\Launcher\;C:\Users\Администратор\AppData\Local\Microsoft\WindowsApps;C:\Users\Администратор\AppData\Roaming\npm;C:\Users\Администратор\AppData\Local\gitkraken\bin;C:\Users\Admin\AppData\Local\gitkraken\bin;C:\Users\Admin\AppData\Local\GitHubDesktop\bin;C:\Users\Admin\.deno\bin;C:\MinGW\bin;C:\Users\Admin\AppData\Local\Yarn\bin;C:\Users\Admin\.dotnet\tools;C:\Users\Admin\AppData\Roaming\npm
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/faker.person: Not found
-      at params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66096:18)
-      at self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140748:22)
-      at Request.emit (node:events:519:28)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141720:10)
-      at Request.emit (node:events:519:28)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141642:12)
-      at Object.onceWrapper (node:events:633:28)
-      at IncomingMessage.emit (node:events:531:35)
-      at endReadableNT (node:internal/streams/readable:1696:12)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+  Error: EPERM: operation not permitted, unlink 'C:\OpenServer\domains\wa-server\node_modules\argon2\prebuilds\win32-x64\argon2.glibc.node'
 
 npm manifest: 
   {
@@ -50,7 +40,7 @@ npm manifest:
   		"prettier": "^3.3.0"
   	},
   	"dependencies": {
-  		"@faker-js/faker": "^8.4.1",
+  		"@faker-js/faker": "7.6.0",
   		"@prisma/client": "^5.14.0",
   		"argon2": "^0.40.3",
   		"dotenv": "^16.4.5",
@@ -191,10 +181,10 @@ Lockfile:
       "@babel/helper-validator-identifier" "^7.24.6"
       to-fast-properties "^2.0.0"
   
-  "@faker-js/faker@^8.4.1":
-    version "8.4.1"
-    resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-8.4.1.tgz#5d5e8aee8fce48f5e189bf730ebd1f758f491451"
-    integrity sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==
+  "@faker-js/faker@7.6.0":
+    version "7.6.0"
+    resolved "https://registry.yarnpkg.com/@faker-js/faker/-/faker-7.6.0.tgz#9ea331766084288634a9247fcd8b84f16ff4ba07"
+    integrity sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==
   
   "@jridgewell/gen-mapping@^0.3.5":
     version "0.3.5"
