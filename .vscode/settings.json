@@ -83,7 +83,7 @@
 	//Terminal
 	"terminal.integrated.fontFamily": "Iosevka NFM",
 	"terminal.integrated.fontSize": 15,
-	"terminal.integrated.tabs.enabled": false,
+	"terminal.integrated.tabs.enabled": true,
 
 	//Explorer
 	"explorer.confirmDelete": false,
