@@ -5,7 +5,7 @@ import { prisma } from '../../prisma.js'
 //@route PUT api/exercises/log/:exerciseId
 //@access private
 export const createNewExerciseLog = asyncHandler(async (req, res) => {
-	const exerciseId = +req.params.exerciseId
+	const exerciseId = +req.params.id
 
 	const exercise = await prisma.exercise.findUnique({
 		where: {
