@@ -79,7 +79,7 @@ model ExerciseTime {
   exerciseLog   ExerciseLog? @relation(fields: [exerciseLogId], references: [id])
   exerciseLogId Int?         @map("exercise_log_id")
   workoutLog    WorkoutLog?  @relation(fields: [workoutLogId], references: [id])
-  workoutLogId  Int?
+  workoutLogId  Int?         @map("workout_log_id")
 
   @@map("Exercise_time")
 }
