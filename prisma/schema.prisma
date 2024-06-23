@@ -43,9 +43,9 @@ model Exercise {
 
   name          String
   times         Int
-  iconPath      String       @map("icon_path")
+  iconPath      String        @map("icon_path")
   workouts      Workout[]
-  exerciseLog   ExerciseLog? @relation(fields: [exerciseLogId], references: [id])
+  exerciseLogs  ExerciseLog[]
   exerciseLogId Int?
 }
 
@@ -60,9 +60,11 @@ model ExerciseLog {
   user   User? @relation(fields: [userId], references: [id])
   userId Int?  @map("user_id")
 
-  exercise     Exercise[]
   workoutLog   WorkoutLog? @relation(fields: [workoutLogId], references: [id])
   workoutLogId Int?        @map("workout_log_id")
+
+  exercise   Exercise? @relation(fields: [exerciseId], references: [id])
+  exerciseId Int?      @map("exercise_id")
 
   @@map("Exercise_log")
 }
