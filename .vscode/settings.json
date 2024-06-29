@@ -31,7 +31,7 @@
 		"editorOverviewRuler.warningForeground": "#0000",
 		"editorOverviewRuler.infoForeground": "#0000"
 	},
-	"workbench.colorTheme": "Default Dark Modern",
+	"workbench.colorTheme": "Kanagawa",
 	"workbench.iconTheme": "material-icon-theme",
 	"workbench.productIconTheme": "fluent-icons",
 	"workbench.layoutControl.enabled": false,
