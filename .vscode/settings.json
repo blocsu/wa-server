@@ -217,5 +217,6 @@
 
 	//Поведение при обнаружении нескольких определений
 	"editor.gotoLocation.multipleDefinitions": "gotoAndPeek",
-	"workbench.activityBar.location": "hidden"
+	"workbench.activityBar.location": "hidden",
+	"cSpell.words": ["Pengineer", "trivago"]
 }

@@ -1,9 +1,6 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -16,11 +13,12 @@ datasource db {
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("update_at")
-  email     String   @unique
-  name      String
-  password  String
-  images    String[]
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  email    String   @unique
+  name     String
+  password String
+  images   String[]
 
   exerciseLogs ExerciseLog[]
   workoutLogs  WorkoutLog[]
@@ -29,7 +27,7 @@ model User {
 model Workout {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("update_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   name        String
   exercises   Exercise[]
@@ -39,20 +37,21 @@ model Workout {
 model Exercise {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("update_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
-  name          String
-  times         Int
-  iconPath      String        @map("icon_path")
-  workouts      Workout[]
-  exerciseLogs  ExerciseLog[]
-  exerciseLogId Int?
+  name     String
+  times    Int
+  iconPath String @map("icon_path")
+
+  workouts Workout[]
+
+  exerciseLogs ExerciseLog[]
 }
 
 model ExerciseLog {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("update_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   isCompleted Boolean        @default(false) @map("is_completed")
   times       ExerciseTime[]
@@ -72,7 +71,7 @@ model ExerciseLog {
 model ExerciseTime {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("update_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
   weight      Int     @default(0)
   repeat      Int     @default(0)
@@ -80,8 +79,6 @@ model ExerciseTime {
 
   exerciseLog   ExerciseLog? @relation(fields: [exerciseLogId], references: [id])
   exerciseLogId Int?         @map("exercise_log_id")
-  workoutLog    WorkoutLog?  @relation(fields: [workoutLogId], references: [id])
-  workoutLogId  Int?         @map("workout_log_id")
 
   @@map("Exercise_time")
 }
@@ -89,10 +86,9 @@ model ExerciseTime {
 model WorkoutLog {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("update_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
 
-  isCompleted Boolean        @default(false) @map("is_completed")
-  times       ExerciseTime[]
+  isCompleted Boolean @default(false) @map("is_completed")
 
   exerciseLogs ExerciseLog[]
 
